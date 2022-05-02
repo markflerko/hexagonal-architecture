@@ -16,4 +16,16 @@ export class MoneyEntity {
   get amount(): BigNumber {
     return this._amount;
   }
+
+  static add(a: MoneyEntity, b: MoneyEntity): MoneyEntity {
+    return new MoneyEntity(a.amount.plus(b.amount));
+  }
+
+  negate() {
+    return new MoneyEntity(this.amount.negated());
+  }
+
+  isPositiveOrZero(): boolean {
+    return this.amount.comparedTo(0) >= 0;
+  }
 }
