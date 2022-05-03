@@ -24,7 +24,7 @@ describe('SendMoneyService', () => {
         true,
       );
       const account = instance(mockedAccountEntity);
-      when(loadAccountPort.loanAccount(id)).thenReturn(account);
+      when(loadAccountPort.loadAccount(id)).thenReturn(account);
       return account;
     }
 
